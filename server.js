@@ -79,6 +79,13 @@ app.get('/bad', (request, response) => {
   });
 })
 
+app.get('/Projects', (request, response) => {
+  response.render('projects.hbs', {
+    welcome_message : 'Portfolio Page (Here)',
+    pageTitle : 'Projects'
+  });
+});
+
 // make app start listening on port 3000
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
