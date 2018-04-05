@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// set port for heroku, but 3000 for local
+const port = process.env.PORT || 3000;
+
 // make new express app
 const app = express();
 
@@ -77,4 +80,6 @@ app.get('/bad', (request, response) => {
 })
 
 // make app start listening on port 3000
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
